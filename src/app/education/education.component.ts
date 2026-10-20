@@ -18,30 +18,39 @@ export class EducationComponent {
   events: EducationEvent[] = [
     {
       step: '01',
-      degree: 'B.TECH / MECHANICAL ENGINEERING',
-      duration: 'AUGUST 2017 — AUGUST 2021',
-      institute: 'CMR ENGINEERING COLLEGE',
-      score: 'CGPA: 6.91',
+      degree: 'FRONTEND DEVELOPER (ANGULAR DEVELOPER)',
+      duration: 'APRIL 2026 — PRESENT',
+      institute: 'INNODIGITAL SOLUTIONS PVT LTD · HYDERABAD',
+      score: 'ENTERPRISE E-KYC',
       description:
-        "Completed my Bachelor's degree in Mechanical Engineering. Graduated on August 2021, from CMR Engineering College. Achieved an overall CGPA of 6.91 during my undergraduate studies.",
+        'Working as an Angular Frontend Developer on eKYC and re-eKYC platforms for demat and trading applications. Implemented DigiLocker services for digital verification, integrated Digio penny drop & reverse penny drop for bank verification, and deployed compliant e-sign document signing.',
     },
     {
       step: '02',
-      degree: 'INTERMEDIATE / MPC',
-      duration: 'JUNE 2015 — MARCH 2017',
-      institute: 'SRI GAYATRI JUNIOR COLLEGE',
-      score: 'SCORE: 81.5%',
+      degree: 'FULL STACK DEVELOPER',
+      duration: 'JUNE 2023 — SEPTEMBER 2025',
+      institute: 'NIVI SOFTWARE SOLUTIONS · HYDERABAD',
+      score: '100K+ USERS · 80+ APIS',
       description:
-        'Completed my Intermediate education with a focus on Mathematics, Physics, and Chemistry (MPC). Graduated on March 2017, from Sri Gayatri Junior College. Attained an overall percentage of 81.5% in my Intermediate studies.',
+        'Designed and operated production SaaS platforms serving 100k+ users. Developed 80+ REST APIs in Node.js & Express with JWT authentication, built reactive Angular apps with real-time WebSocket updates, and optimized MongoDB aggregation pipelines reducing query latency by 60%.',
     },
     {
       step: '03',
-      degree: 'SSC / 10TH STANDARD',
-      duration: 'JUNE 2014 — MARCH 2015',
-      institute: 'S. S. BHOOPATHY HIGH SCHOOL',
-      score: 'CGPA: 8.3',
+      degree: 'FULL STACK DEVELOPER INTERN',
+      duration: 'MARCH 2023 — MAY 2023',
+      institute: 'NIVI SOFTWARE SOLUTIONS · HYDERABAD',
+      score: 'REST APIS · AGILE',
       description:
-        'Completed my SSC/10th-grade education. Graduated on October 15, 2020, from S. S. Bhoopathy High School. Achieved an overall CGPA of 8.3 in my 10th-grade examinations.',
+        'Assisted in building REST APIs using Node.js and Express following MVC architecture. Developed Angular components, integrated frontend with backend APIs, authored Postman test suites, and collaborated with senior developers in Agile sprint cycles.',
+    },
+    {
+      step: '04',
+      degree: 'BACHELOR OF TECHNOLOGY (MECHANICAL)',
+      duration: 'JUNE 2017 — AUGUST 2021',
+      institute: 'CMR ENGINEERING COLLEGE · HYDERABAD',
+      score: 'CGPA: 6.91',
+      description:
+        'Completed Bachelor of Technology in Mechanical Engineering at CMR Engineering College (June 2017 – August 2021). Built core foundational logic in systems engineering, structural analysis, and algorithmic mathematics.',
     },
   ];
 }

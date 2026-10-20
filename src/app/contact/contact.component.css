@@ -56,6 +56,58 @@
   }
 }
 
+/* Channels grid */
+.contact-channels-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1px;
+  background-color: var(--line);
+  border: 1px solid var(--line);
+  max-width: 960px;
+  margin: 0 auto 3rem auto;
+}
+
+@media (min-width: 640px) {
+  .contact-channels-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .contact-channels-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.contact-channel-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.5rem 1.25rem;
+  background-color: var(--bg);
+  text-decoration: none;
+  transition: background-color 0.15s ease, transform 0.15s ease;
+}
+
+a.contact-channel-card:hover {
+  background-color: var(--bg-raised);
+}
+
+.channel-val {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ink-strong);
+  word-break: break-word;
+}
+
+.channel-action {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+}
+
 .contact-form {
   max-width: 640px;
   margin: 0 auto;

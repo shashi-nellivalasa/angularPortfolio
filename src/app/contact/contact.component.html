@@ -24,8 +24,35 @@
     </p>
   </div>
 
-  <!-- Contact Form -->
+  <!-- Contact Form & Direct Channels Wrapper -->
   <div class="contact-form-wrapper">
+    <!-- Direct contact channels card grid -->
+    <div class="contact-channels-grid">
+      <a href="mailto:nellivalasa.shashi@gmail.com" class="contact-channel-card">
+        <span class="hud-label text-faint">EMAIL</span>
+        <span class="channel-val">nellivalasa.shashi@gmail.com</span>
+        <span class="channel-action">Send email ↗</span>
+      </a>
+
+      <a href="tel:+919985502266" class="contact-channel-card">
+        <span class="hud-label text-faint">PHONE</span>
+        <span class="channel-val">+91 9985502266</span>
+        <span class="channel-action">Call / WhatsApp ↗</span>
+      </a>
+
+      <div class="contact-channel-card">
+        <span class="hud-label text-faint">LOCATION</span>
+        <span class="channel-val">Hyderabad, Telangana, India</span>
+        <span class="channel-action">Open to Hybrid / Remote</span>
+      </div>
+
+      <a href="https://www.linkedin.com/in/shashi-nellivalasa" target="_blank" rel="noopener noreferrer" class="contact-channel-card">
+        <span class="hud-label text-faint">LINKEDIN</span>
+        <span class="channel-val">in/shashi-nellivalasa</span>
+        <span class="channel-action">Connect on LinkedIn ↗</span>
+      </a>
+    </div>
+
     <form (ngSubmit)="onSubmit()" class="contact-form">
       <div *ngIf="submitted" class="success-alert">
         ✓ Transmission received. Thank you for reaching out!
@@ -93,7 +120,7 @@
           <span class="hud-label text-ink-strong" style="font-size: 13px;">Shashi Nellivalasa</span>
         </div>
         <p class="footer-bio-text">
-          Full stack web developer specializing in responsive interfaces, Angular, Node.js, and scalable web applications.
+          Product-minded Full Stack Engineer with 3 years of experience in TypeScript, Angular, Node.js, and scalable production systems.
         </p>
       </div>
 
@@ -112,21 +139,21 @@
 
       <!-- Col 3: Community & Connect -->
       <div class="footer-col">
-        <span class="footer-col-title">Community</span>
+        <span class="footer-col-title">Connect</span>
         <ul class="footer-links-list">
           <li>
-            <a href="https://github.com/shashin26" target="_blank" rel="noopener noreferrer" class="footer-link">
+            <a href="https://github.com/shashi-nellivalasa" target="_blank" rel="noopener noreferrer" class="footer-link">
               GitHub ↗
             </a>
           </li>
           <li>
-            <a href="https://www.linkedin.com/in/shashi-nellivalasa-21b407353/" target="_blank" rel="noopener noreferrer" class="footer-link">
+            <a href="https://www.linkedin.com/in/shashi-nellivalasa" target="_blank" rel="noopener noreferrer" class="footer-link">
               LinkedIn ↗
             </a>
           </li>
           <li>
-            <a href="https://www.instagram.com/shashi_nellivalasa/" target="_blank" rel="noopener noreferrer" class="footer-link">
-              Instagram ↗
+            <a href="mailto:nellivalasa.shashi@gmail.com" class="footer-link">
+              Email ↗
             </a>
           </li>
         </ul>
@@ -134,12 +161,12 @@
 
       <!-- Col 4: Tech Stack -->
       <div class="footer-col">
-        <span class="footer-col-title">Architecture</span>
+        <span class="footer-col-title">Stack</span>
         <ul class="footer-links-list">
-          <li class="footer-link">Angular 16</li>
-          <li class="footer-link">TypeScript 5</li>
-          <li class="footer-link">Node.js & Express</li>
-          <li class="footer-link">MongoDB & REST</li>
+          <li class="footer-link">Angular 16 & RxJS</li>
+          <li class="footer-link">TypeScript & Node.js</li>
+          <li class="footer-link">Express & REST APIs</li>
+          <li class="footer-link">MongoDB & AWS</li>
         </ul>
       </div>
     </div>

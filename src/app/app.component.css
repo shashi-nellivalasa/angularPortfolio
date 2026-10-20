@@ -257,7 +257,7 @@
 .top-rail-stack {
   position: absolute;
   top: 1.5rem;
-  right: 2.25rem;
+  right: 3.75rem;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -270,11 +270,11 @@
 .rail-passed-btn {
   background: none;
   border: none;
-  padding: 2px 0;
+  padding: 3px 0;
   margin: 0;
   font-family: var(--font-mono);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: none;
   color: var(--muted);
@@ -293,7 +293,7 @@
 .active-rail-slot {
   position: absolute;
   top: 50%;
-  right: 2.25rem;
+  right: 3.75rem;
   transform: translateY(-50%);
   pointer-events: auto;
   cursor: pointer;
@@ -328,7 +328,7 @@
 .upcoming-rail-stack {
   position: absolute;
   bottom: 2rem;
-  right: 2.25rem;
+  right: 3.75rem;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -341,15 +341,15 @@
 .rail-upcoming-btn {
   background: none;
   border: none;
-  padding: 2px 0;
+  padding: 3px 0;
   margin: 0;
   font-family: var(--font-mono);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: none;
-  color: var(--muted);
-  opacity: 0.55;
+  color: var(--ink);
+  opacity: 0.72;
   cursor: pointer;
   text-align: right;
   transition: opacity 0.2s ease, color 0.2s ease, transform 0.2s ease;
@@ -358,13 +358,7 @@
 
 .rail-upcoming-btn:hover {
   opacity: 1;
-  color: var(--ink-strong);
-  transform: translateX(-3px);
-}
-
-.rail-upcoming-btn:hover {
-  opacity: 1;
-  color: var(--ink-strong);
+  color: var(--accent);
   transform: translateX(-3px);
 }
 
