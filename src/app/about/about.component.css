@@ -1,1 +1,137 @@
-/* Add your styles here */
+/* ==========================================================================
+   About Component Styles (ArtCraft Section 02: Profile)
+   ========================================================================== */
+
+.about-section {
+  position: relative;
+  border-bottom: 1px solid var(--line);
+}
+
+.about-content {
+  padding: 3.5rem 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .about-content {
+    padding: 5rem 2.5rem;
+  }
+}
+
+.about-header {
+  margin-bottom: 3rem;
+}
+
+.about-headline {
+  font-family: var(--font-display);
+  font-size: 2.25rem;
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  color: var(--ink-strong);
+}
+
+@media (min-width: 640px) {
+  .about-headline {
+    font-size: 3rem;
+  }
+}
+
+.about-body-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  margin-bottom: 3.5rem;
+}
+
+@media (min-width: 1024px) {
+  .about-body-grid {
+    grid-template-columns: 1.6fr 1fr;
+    gap: 4rem;
+  }
+}
+
+.about-text {
+  font-size: 1.125rem;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+.about-stats-panel {
+  border: 1px solid var(--line);
+  background-color: var(--bg-raised);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.stat-item:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.stat-value {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--ink-strong);
+  letter-spacing: -0.02em;
+}
+
+.stat-desc {
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+/* Pillar cards grid */
+.pillars-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+@media (min-width: 768px) {
+  .pillars-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.pillar-card {
+  padding: 2rem 1.5rem;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background-color: var(--bg);
+  transition: background-color 0.2s ease;
+}
+
+.pillar-card:hover {
+  background-color: var(--bg-raised);
+}
+
+.pillar-num {
+  margin-bottom: 1.25rem;
+}
+
+.pillar-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ink-strong);
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+}
+
+.pillar-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--muted);
+}

@@ -1,1 +1,205 @@
-/* Add your styles here */
+/* ==========================================================================
+   Contact Component Styles (ArtCraft Section 06: Get Started & Footer)
+   ========================================================================== */
+
+.contact-section {
+  position: relative;
+}
+
+/* Callout area */
+.contact-hero {
+  padding: 4.5rem 1.5rem;
+  text-align: center;
+  border-bottom: 1px solid var(--line);
+  background-color: var(--bg);
+}
+
+@media (min-width: 768px) {
+  .contact-hero {
+    padding: 6rem 2.5rem;
+  }
+}
+
+.contact-headline {
+  font-family: var(--font-display);
+  font-size: 2.75rem;
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  color: var(--ink-strong);
+  margin-bottom: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .contact-headline {
+    font-size: 3.75rem;
+  }
+}
+
+.contact-subtext {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--muted);
+  max-width: 34rem;
+  margin: 0 auto;
+}
+
+/* Form container */
+.contact-form-wrapper {
+  padding: 3.5rem 1.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+@media (min-width: 768px) {
+  .contact-form-wrapper {
+    padding: 4.5rem 2.5rem;
+  }
+}
+
+.contact-form {
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.form-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.field-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.field-input,
+.field-textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  background-color: var(--bg-raised);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  border-radius: 0;
+  outline: none;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.field-input:focus,
+.field-textarea:focus {
+  border-color: var(--ink);
+  background-color: var(--bg);
+}
+
+.field-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.success-alert {
+  padding: 1rem;
+  border: 1px solid var(--accent);
+  background-color: rgba(45, 129, 255, 0.08);
+  color: var(--accent-ink);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+/* Footer layout */
+.editorial-footer {
+  background-color: var(--bg);
+}
+
+.footer-columns-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  border-left: 1px solid var(--line);
+}
+
+@media (min-width: 640px) {
+  .footer-columns-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer-columns-grid {
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  }
+}
+
+.footer-col {
+  padding: 2.5rem 2rem;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer-col-title {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--faint);
+  margin-bottom: 0.5rem;
+}
+
+.footer-bio-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.footer-links-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.footer-link {
+  font-size: 0.95rem;
+  color: var(--muted);
+  transition: color 0.15s ease;
+  cursor: pointer;
+}
+
+.footer-link:hover {
+  color: var(--ink-strong);
+}
+
+.footer-bottom-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid var(--line);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+@media (min-width: 640px) {
+  .footer-bottom-bar {
+    flex-direction: row;
+  }
+}

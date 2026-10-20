@@ -1,19 +1,43 @@
-<section id="skills" class="fadeinright animation-duration-2000 p-5">
-  <div class="px-4 py-5 md:px-6 lg:px-8">
-    <div class="heading text-center py-2">
-      <h1>My <span>Skills</span></h1>
-    </div>
-    <div class="skillsGrid">
-      <div *ngFor="let skill of skills">
-        <div class="border-round card flex text-center">
-          <p-knob
-            class=""
-            [(ngModel)]="skill.percentage"
-            valueTemplate="{value}%"
-            [readonly]="true"
-          ></p-knob>
-          <h2 class="h2">{{ skill.skillName | uppercase }}</h2>
-          <p>{{ skill.description }}</p>
+<!-- ==========================================================================
+     SECTION 03: PRINCIPLES
+     ========================================================================== -->
+<section id="skills" class="skills-section">
+  <!-- Sticky Eyebrow Header -->
+  <div class="sticky-eyebrow">
+    <p class="hud-label text-muted">
+      <span class="text-faint">04</span>
+      <span style="margin: 0 0.5rem;" class="text-faint">/</span>
+      SKILLS
+    </p>
+    <p class="hud-label text-faint" style="display: none; @media(min-width: 640px) { display: block; }">
+      Core Competencies · Architecture · Language Runtimes
+    </p>
+  </div>
+
+  <!-- Skills Principles Grid -->
+  <div class="skills-grid">
+    <div *ngFor="let skill of skills" class="skill-card">
+      <div class="skill-card-header">
+        <div class="skill-icon-box">
+          <i [class]="skill.icon" style="font-size: 1.15rem;"></i>
+        </div>
+        <span class="hud-label text-faint">{{ skill.id }}</span>
+      </div>
+
+      <div class="skill-card-main">
+        <span class="skill-category-tag">{{ skill.category }}</span>
+        <h3 class="skill-title">{{ skill.displayName }}</h3>
+        <p class="skill-desc">{{ skill.description }}</p>
+      </div>
+
+      <!-- Precision HUD Gauge -->
+      <div class="skill-gauge">
+        <div class="gauge-header">
+          <span class="gauge-label">PROFICIENCY RATING</span>
+          <span class="gauge-val">{{ skill.percentage }}%</span>
+        </div>
+        <div class="gauge-track">
+          <div class="gauge-fill" [style.width.%]="skill.percentage"></div>
         </div>
       </div>
     </div>

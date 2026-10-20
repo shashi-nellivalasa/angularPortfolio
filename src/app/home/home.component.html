@@ -1,37 +1,154 @@
-<section>
-  <div class="row align-items-center">
-    <div class="text px-5">
-      <div class="heading text-center py-5">
-        <h1 class="py-2 text-center">Hi, I'm <br /><span>Shashi Nellivalasa</span></h1>
-      </div>
-      <p class="context px-5 py-2">
-        I am a full stack web developer with expertise in front and back-end
-        development. My skills in HTML, CSS, JavaScript, Angular, Node.js, Express.js and MangoDB
-        frameworks allow me to create dynamic and responsive web applications that
-        meet the needs of businesses and users alike. I also have experience in
-        database management and server-side programming languages such as Node.js
-        and Python.
+<div class="artcraft-container">
+  <!-- Crosshair corner tick markers -->
+  <span class="tick" style="top: -6px; left: -6px;" aria-hidden="true"></span>
+  <span class="tick" style="top: -6px; right: -6px;" aria-hidden="true"></span>
+
+  <!-- ==========================================================================
+       SECTION 01: INTRO / HERO
+       ========================================================================== -->
+  <section id="home" class="hero-section">
+    <!-- Sticky Eyebrow Header -->
+    <div class="sticky-eyebrow">
+      <p class="hud-label text-muted">
+        <span class="text-faint">01</span>
+        <span style="margin: 0 0.5rem;" class="text-faint">/</span>
+        HOME
       </p>
-      <div class="buttons-heading row justify-content-center">
-        <h2 class="connect fs-3 fw-bold text-center ">Connect With Me!</h2>
+      <p class="hud-label text-faint" style="display: none; @media(min-width: 640px) { display: block; }">
+        3 Years Experience · TypeScript · Angular · Node.js
+      </p>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-text-col">
+        <span class="hud-label hero-greeting">HI, I'M SHASHI NELLIVALASA</span>
+        <h1 class="hero-title">
+          Product-minded<br />
+          Full Stack <span class="text-accent">Engineer</span>.
+        </h1>
+
+        <!-- User's exact resume summary -->
+        <p class="hero-bio">
+          Product-minded Full Stack Engineer with 3 years of experience building scalable enterprise web applications using TypeScript, JavaScript, Node.js, and modern frontend frameworks like Angular. Strong believer in API-first design, ownership, and DevOps principles—building, running, and continuously improving production systems. Experienced in cloud-based architectures, performance optimization, and secure application development while collaborating in remote, cross-functional teams.
+        </p>
+
+        <!-- Primary Action Buttons Row -->
+        <div class="hero-actions">
+          <button type="button" class="hud-btn" (click)="scrollToSection('contact')">
+            <i class="pi pi-send" style="font-size: 0.8rem;"></i>
+            Connect With Me
+          </button>
+
+          <button type="button" class="hud-btn-outline" (click)="scrollToSection('projects')">
+            Explore Projects
+            <i class="pi pi-arrow-right" style="font-size: 0.75rem;"></i>
+          </button>
+
+          <a
+            href="https://github.com/shashi-nellivalasa"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hud-btn-outline"
+            aria-label="GitHub Profile"
+          >
+            <i class="pi pi-github" style="font-size: 0.9rem;"></i>
+            GitHub
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/shashi-nellivalasa"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hud-btn-outline"
+            aria-label="LinkedIn Profile"
+          >
+            <i class="pi pi-linkedin" style="font-size: 0.9rem;"></i>
+            LinkedIn
+          </a>
+        </div>
+
+        <!-- Technical Share / Link Strip -->
+        <div class="share-bar">
+          <span class="hud-label share-label">Share</span>
+          <button type="button" class="share-btn" (click)="copyLink()">
+            <i [class]="copied ? 'pi pi-check' : 'pi pi-copy'" style="font-size: 0.75rem;"></i>
+            {{ copied ? 'Copied' : 'Copy link' }}
+          </button>
+          <a
+            href="https://www.linkedin.com/sharing/share-offsite/?url=https://linkedin.com/in/shashi-nellivalasa"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="share-btn"
+          >
+            LinkedIn
+          </a>
+          <a
+            href="https://github.com/shashi-nellivalasa"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="share-btn"
+          >
+            GitHub
+          </a>
+        </div>
       </div>
-      <div class="buttons">
-        <a class="connect-link" href="https://github.com/shashin26" target="_blank">
-          <p-button icon="pi pi-github" styleClass="p-button-rounded p-button-raised">
-          </p-button>
-        </a>
-        <a class="connect-link" href="https://www.linkedin.com/in/shashi-nellivalasa-21b407353/" target="_blank">
-          <p-button icon="pi pi-linkedin" styleClass="p-button-rounded p-button-raised">
-          </p-button>
-        </a>
-        <a class="connect-link" href="https://www.instagram.com/shashi_nellivalasa/" target="_blank">
-          <p-button icon="pi pi-instagram" styleClass="p-button-rounded p-button-raised">
-          </p-button>
-        </a>
+
+      <!-- Right Column: Profile Console -->
+      <div class="hero-visual-col">
+        <div class="profile-console">
+          <div class="console-header">
+            <span class="hud-label text-muted">TERMINAL // SHASHI.N</span>
+            <div class="console-dots">
+              <span class="console-dot"></span>
+              <span class="console-dot"></span>
+              <span class="console-dot"></span>
+            </div>
+          </div>
+
+          <div class="profile-image-frame">
+            <img
+              src="assets/profile-pic.png"
+              alt="Shashi Nellivalasa"
+              class="profile-img"
+            />
+          </div>
+
+          <div class="console-footer">
+            <div class="console-status-row">
+              <span class="status-indicator">
+                <span class="status-beacon"></span>
+                ACTIVE · HYDERABAD, INDIA
+              </span>
+              <span class="hud-label text-faint">3 YRS EXP</span>
+            </div>
+            <div class="console-chips">
+              <span class="hud-tag active">Angular</span>
+              <span class="hud-tag">TypeScript</span>
+              <span class="hud-tag">Node.js</span>
+              <span class="hud-tag">Express.js</span>
+              <span class="hud-tag">MongoDB</span>
+              <span class="hud-tag">RxJS</span>
+              <span class="hud-tag">REST APIs</span>
+              <span class="hud-tag">AWS</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="img">
-      <img class="profilePic" src="assets/profile-pic.png" alt="" />
-    </div>
-  </div>
-</section>
+  </section>
+
+  <!-- Section 02: About -->
+  <app-about></app-about>
+
+  <!-- Section 03: Education -->
+  <app-education></app-education>
+
+  <!-- Section 04: Skills -->
+  <app-skills></app-skills>
+
+  <!-- Section 05: Projects -->
+  <app-projects></app-projects>
+
+  <!-- Section 06: Contact -->
+  <app-contact></app-contact>
+</div>

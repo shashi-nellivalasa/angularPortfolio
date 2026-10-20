@@ -1,18 +1,37 @@
-<section
-  id="education"
-  class="education p-5 fadeinleft animation-duration-500"
->
-  <div class="heading text-center py-2">
-    <h1>My <span>Journey</span></h1>
+<!-- ==========================================================================
+     SECTION 03: EDUCATION
+     ========================================================================== -->
+<section id="education" class="education-section">
+  <!-- Sticky Eyebrow Header -->
+  <div class="sticky-eyebrow">
+    <p class="hud-label text-muted">
+      <span class="text-faint">03</span>
+      <span style="margin: 0 0.5rem;" class="text-faint">/</span>
+      EDUCATION
+    </p>
+    <p class="hud-label text-faint" style="display: none; @media(min-width: 640px) { display: block; }">
+      Academic Foundations · Engineering Timeline
+    </p>
   </div>
-  <p-timeline [value]="events" layout="horizontal" align="bottom">
-    <ng-template pTemplate="opposite" let-event>
-      <div class="eduCard shadow-2 border-round">
-        <h4 class="fw-bold text-justify">{{ event.degree | uppercase}}</h4>
-        <span class="fs-6 text-end"> -> {{ event.duration | uppercase }}</span>
-        <p class="fw-bold text-justify">{{ event.institute | uppercase }}</p>
-        <p class="text-center" >{{ event.description }}</p>
+
+  <!-- Editorial Timeline Grid -->
+  <div class="timeline-grid">
+    <div *ngFor="let item of events" class="timeline-card">
+      <div class="card-step-row">
+        <span class="hud-label text-faint">{{ item.step }}</span>
+        <span class="duration-tag">{{ item.duration }}</span>
       </div>
-    </ng-template>
-  </p-timeline>
+
+      <div class="card-main-info">
+        <span class="institute-label">{{ item.institute }}</span>
+        <h3 class="degree-title">{{ item.degree }}</h3>
+        <p class="description-text">{{ item.description }}</p>
+      </div>
+
+      <div class="card-footer-score">
+        <span class="hud-tag active">{{ item.score }}</span>
+        <span class="hud-label text-faint">VERIFIED RECORD</span>
+      </div>
+    </div>
+  </div>
 </section>

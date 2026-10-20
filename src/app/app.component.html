@@ -1,35 +1,271 @@
-<header class="header">
-  <nav class="navbar navbar-expand-lg navbar-light">
-    <div class="container d-flex justify-content-between align-items-end">
-      <a class="navbar-brand" href="#home">Shashi n.</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/about" routerLinkActive="active">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/education" routerLinkActive="active">Education</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/skills" routerLinkActive="active">Skills</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/projects" routerLinkActive="active">Projects</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/contact" routerLinkActive="active">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+<!-- ==========================================================================
+     ArtCraft Site Navigation Header
+     ========================================================================== -->
+<header id="site-nav" class="site-header">
+  <div class="nav-left">
+    <!-- Brand Monogram -->
+    <a class="brand-cell" href="#home" (click)="$event.preventDefault(); scrollToSection('home')">
+      <span class="brand-mark">SN</span>
+      <span>Shashi N.</span>
+    </a>
+
+    <!-- Desktop Navigation Links matching original portfolio labels -->
+    <ul class="nav-links-desktop">
+      <li class="nav-item">
+        <button
+          type="button"
+          class="nav-link-btn"
+          [class.active]="activeSectionId === 'home'"
+          (click)="scrollToSection('home')"
+          (mouseenter)="onTopNavHover(true, $event)"
+          (mouseleave)="onTopNavHover(false, $event)"
+        >
+          <span>Home</span>
+        </button>
+      </li>
+      <li class="nav-item">
+        <button
+          type="button"
+          class="nav-link-btn"
+          [class.active]="activeSectionId === 'about'"
+          (click)="scrollToSection('about')"
+          (mouseenter)="onTopNavHover(true, $event)"
+          (mouseleave)="onTopNavHover(false, $event)"
+        >
+          <span>About</span>
+        </button>
+      </li>
+      <li class="nav-item">
+        <button
+          type="button"
+          class="nav-link-btn"
+          [class.active]="activeSectionId === 'education'"
+          (click)="scrollToSection('education')"
+          (mouseenter)="onTopNavHover(true, $event)"
+          (mouseleave)="onTopNavHover(false, $event)"
+        >
+          <span>Education</span>
+        </button>
+      </li>
+      <li class="nav-item">
+        <button
+          type="button"
+          class="nav-link-btn"
+          [class.active]="activeSectionId === 'skills'"
+          (click)="scrollToSection('skills')"
+          (mouseenter)="onTopNavHover(true, $event)"
+          (mouseleave)="onTopNavHover(false, $event)"
+        >
+          <span>Skills</span>
+        </button>
+      </li>
+      <li class="nav-item">
+        <button
+          type="button"
+          class="nav-link-btn"
+          [class.active]="activeSectionId === 'projects'"
+          (click)="scrollToSection('projects')"
+          (mouseenter)="onTopNavHover(true, $event)"
+          (mouseleave)="onTopNavHover(false, $event)"
+        >
+          <span>Projects</span>
+        </button>
+      </li>
+      <li class="nav-item">
+        <button
+          type="button"
+          class="nav-link-btn"
+          [class.active]="activeSectionId === 'contact'"
+          (click)="scrollToSection('contact')"
+          (mouseenter)="onTopNavHover(true, $event)"
+          (mouseleave)="onTopNavHover(false, $event)"
+        >
+          <span>Contact</span>
+        </button>
+      </li>
+    </ul>
+  </div>
+
+  <div class="nav-right">
+    <!-- Social Link: GitHub -->
+    <a
+      href="https://github.com/shashin26"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="header-icon-btn"
+      title="GitHub Profile"
+      aria-label="GitHub Profile"
+    >
+      <i class="pi pi-github" style="font-size: 1rem;"></i>
+    </a>
+
+    <!-- Social Link: LinkedIn -->
+    <a
+      href="https://www.linkedin.com/in/shashi-nellivalasa-21b407353/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="header-icon-btn"
+      title="LinkedIn Profile"
+      aria-label="LinkedIn Profile"
+    >
+      <i class="pi pi-linkedin" style="font-size: 1rem;"></i>
+    </a>
+
+    <!-- Theme Toggle Button -->
+    <button
+      type="button"
+      class="header-icon-btn"
+      (click)="toggleTheme()"
+      [title]="isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'"
+      [attr.aria-label]="isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'"
+    >
+      <i [class]="isDarkMode ? 'pi pi-sun' : 'pi pi-moon'" style="font-size: 1rem;"></i>
+    </button>
+
+    <!-- Header CTA Button -->
+    <button
+      type="button"
+      class="header-cta-btn"
+      (click)="scrollToSection('contact')"
+    >
+      Contact
+    </button>
+
+    <!-- Mobile Menu Toggle Button -->
+    <button
+      type="button"
+      class="mobile-toggle-btn"
+      (click)="toggleMobileMenu()"
+      aria-label="Toggle navigation menu"
+    >
+      <i [class]="mobileMenuOpen ? 'pi pi-times' : 'pi pi-bars'" style="font-size: 1.1rem;"></i>
+    </button>
+  </div>
 </header>
 
-<router-outlet class="outlet"></router-outlet>
+<!-- Mobile Navigation Drawer -->
+<nav *ngIf="mobileMenuOpen" class="mobile-drawer">
+  <button
+    type="button"
+    class="mobile-nav-item"
+    [class.active]="activeSectionId === 'home'"
+    (click)="scrollToSection('home')"
+  >
+    Home
+  </button>
+  <button
+    type="button"
+    class="mobile-nav-item"
+    [class.active]="activeSectionId === 'about'"
+    (click)="scrollToSection('about')"
+  >
+    About
+  </button>
+  <button
+    type="button"
+    class="mobile-nav-item"
+    [class.active]="activeSectionId === 'education'"
+    (click)="scrollToSection('education')"
+  >
+    Education
+  </button>
+  <button
+    type="button"
+    class="mobile-nav-item"
+    [class.active]="activeSectionId === 'skills'"
+    (click)="scrollToSection('skills')"
+  >
+    Skills
+  </button>
+  <button
+    type="button"
+    class="mobile-nav-item"
+    [class.active]="activeSectionId === 'projects'"
+    (click)="scrollToSection('projects')"
+  >
+    Projects
+  </button>
+  <button
+    type="button"
+    class="mobile-nav-item"
+    [class.active]="activeSectionId === 'contact'"
+    (click)="scrollToSection('contact')"
+  >
+    Contact
+  </button>
+</nav>
+
+<!-- ==========================================================================
+     ArtCraft Signature Fixed Right Side-Rail & Dynamic Scroll Tracker
+     ========================================================================== -->
+<aside class="side-rail" aria-label="Section navigation and scroll progress">
+  <!-- Top Right Stack: Passed sections that user has scrolled beyond -->
+  <div class="top-rail-stack" *ngIf="pastSections.length > 0">
+    <button
+      type="button"
+      *ngFor="let s of pastSections"
+      class="rail-passed-btn"
+      (click)="scrollToSection(s.id)"
+      (mouseenter)="onSideBtnHover(true, $event, 0.75)"
+      (mouseleave)="onSideBtnHover(false, $event, 0.5)"
+      [title]="'Jump back to ' + s.sideLabel"
+    >
+      {{ s.sideLabel }}
+    </button>
+  </div>
+
+  <!-- Center Right Rail: Active section displayed VERTICALLY along the side rail line -->
+  <div
+    *ngIf="activeSection"
+    class="active-rail-slot"
+    (click)="scrollToSection(activeSection.id)"
+    (mouseenter)="onVerticalHover(true, $event)"
+    (mouseleave)="onVerticalHover(false, $event)"
+    [title]="'Active section: ' + activeSection.sideLabel + ' (Click to scroll)'"
+  >
+    <span class="active-vertical-label">{{ activeSection.sideLabel }}</span>
+  </div>
+
+  <!-- Bottom Right Stack: Upcoming sections waiting before activation -->
+  <div class="upcoming-rail-stack" *ngIf="upcomingSections.length > 0">
+    <button
+      type="button"
+      *ngFor="let s of upcomingSections"
+      class="rail-upcoming-btn"
+      (click)="scrollToSection(s.id)"
+      (mouseenter)="onSideBtnHover(true, $event, 0.85)"
+      (mouseleave)="onSideBtnHover(false, $event, 0.5)"
+      [title]="'Jump to ' + s.sideLabel"
+    >
+      {{ s.sideLabel }}
+    </button>
+  </div>
+
+  <!-- Vertical Scale Ruler on Far-Right Edge -->
+  <div class="ruler-container" aria-hidden="true">
+    <div
+      *ngFor="let step of rulerSteps"
+      class="ruler-tick"
+      [class.major]="step % 20 === 0"
+      (click)="scrollToPercentage(step)"
+      [title]="'Jump to ' + step + '%'"
+    >
+      <span class="ruler-number" *ngIf="step % 20 === 0">{{ step }}</span>
+    </div>
+
+    <!-- Real-time scroll needle indicator -->
+    <div
+      class="ruler-needle"
+      [style.top.%]="scrollPercentage"
+    >
+      <span class="needle-readout">{{ formatPercentage(scrollPercentage) }}</span>
+    </div>
+  </div>
+</aside>
+
+<!-- ==========================================================================
+     Main Content
+     ========================================================================== -->
+<main id="main-content" class="main-wrapper">
+  <router-outlet></router-outlet>
+</main>

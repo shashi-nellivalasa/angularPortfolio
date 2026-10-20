@@ -1,19 +1,72 @@
-<section id="projects" class="fadeinright animation-duration-1000 p-5">
-  <div class="px-4 py-8 md:px-6 lg:px-8 text-center">
-    <div class="heading text-center py-2">
-      <h1>My <span>Projects</span></h1>
-    </div>
-    <div class="grid">
-      <div *ngFor="let project of projects" class="col-12 md:col-4 mb-4 px-5">
-        <span
-          class="p-3 shadow-2 mb-3 inline-block surface-card border-2 rounded-3"
-        >
-          <i class="pi pi-desktop text-4xl text-blue-500"></i>
+<!-- ==========================================================================
+     SECTION 05: PROJECTS
+     ========================================================================== -->
+<section id="projects" class="projects-section">
+  <!-- Sticky Eyebrow Header -->
+  <div class="sticky-eyebrow">
+    <p class="hud-label text-muted">
+      <span class="text-faint">05</span>
+      <span style="margin: 0 0.5rem;" class="text-faint">/</span>
+      PROJECTS
+    </p>
+    <p class="hud-label text-faint" style="display: none; @media(min-width: 640px) { display: block; }">
+      Pick a craft to explore · Full Stack Workbench
+    </p>
+  </div>
+
+  <!-- Projects Grid matching ArtCraft App Lineup -->
+  <div class="projects-grid">
+    <div *ngFor="let project of projects" class="project-card">
+      <!-- Card Top Bar: Badge & Category -->
+      <div class="card-top-bar">
+        <span class="card-num-badge" [style.backgroundColor]="project.badgeColor">
+          {{ project.id }}
         </span>
-        <div class="text-900 text-xl mb-3 font-medium">
-          {{ project.projectName }}
+        <span class="card-category-label">
+          {{ project.category }}
+        </span>
+      </div>
+
+      <!-- Media Preview Frame -->
+      <div class="card-media-frame">
+        <div class="card-ui-lines"></div>
+        <div class="card-app-icon-badge" [style.backgroundColor]="project.badgeColor">
+          <i [class]="project.icon" style="font-size: 1.5rem;"></i>
         </div>
-        <span class="text-700 line-height-3">{{ project.description }}</span>
+      </div>
+
+      <!-- Card Content Details -->
+      <div class="card-body">
+        <div class="card-body-main">
+          <span class="project-sub-tag">{{ project.projectName | uppercase }}</span>
+          <h3 class="project-display-title">
+            {{ project.displayName }}
+          </h3>
+          <p class="project-desc-text">
+            {{ project.description }}
+          </p>
+        </div>
+
+        <div class="card-body-footer">
+          <!-- Tag pills -->
+          <div class="card-tags-row">
+            <span class="hud-tag active">{{ project.status }}</span>
+            <span *ngFor="let tag of project.tags" class="hud-tag">
+              {{ tag }}
+            </span>
+          </div>
+
+          <!-- Explore Link -->
+          <a
+            [href]="project.link"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="card-explore-link"
+          >
+            Explore {{ project.displayName }}
+            <i class="pi pi-arrow-up-right"></i>
+          </a>
+        </div>
       </div>
     </div>
   </div>

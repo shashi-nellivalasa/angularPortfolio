@@ -1,126 +1,451 @@
-* {
-  color: #023e8a;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: large;
-}
-.siteName {
-  width: 200px;
-  font-size: larger;
+/* ==========================================================================
+   ArtCraft App Layout, Header, and Side Rail Styles
+   ========================================================================== */
+
+:host {
+  display: block;
+  min-height: 100vh;
+  background-color: var(--bg);
+  color: var(--ink);
 }
 
-.row {
-  scrollbar-gutter: stable;
+/* Site Header */
+.site-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  height: 48px;
+  background-color: rgba(var(--bg-rgb), 0.94);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  transition: background-color 0.25s ease;
 }
 
-.navbar-brand {
-  font-weight: bold;
+.nav-left {
+  display: flex;
+  align-items: stretch;
+  min-width: 0;
+}
+
+.brand-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 1.25rem;
+  border-right: 1px solid var(--line);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: -0.02em;
+  color: var(--ink-strong);
+  transition: opacity 0.15s ease;
+}
+
+.brand-cell:hover {
+  opacity: 0.7;
+}
+
+.brand-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  background-color: var(--invert-bg);
+  color: var(--invert-fg);
+  font-family: var(--font-mono);
+  font-weight: 800;
+  font-size: 11px;
+}
+
+.nav-links-desktop {
+  display: none;
+  align-items: stretch;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 1024px) {
+  .nav-links-desktop {
+    display: flex;
+  }
 }
 
 .nav-item {
-  list-style: none;
-  margin-left: 10px;
-  margin-right: 10px;
-}
-
-.nav-link {
-  font-weight: 500;
-}
-.logo {
-  width: 10px;
-  height: 10px;
-}
-
-.text {
-  width: 60%;
-  text-align: justify;
-  font-weight: 500;
-}
-.img {
   display: flex;
-  width: 40%;
+  align-items: stretch;
+}
+
+.nav-link-btn {
+  display: flex;
+  align-items: center;
+  padding: 0 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: none;
+  color: var(--muted);
+  cursor: pointer;
+  border: none;
+  background: none;
+  transition: color 0.15s ease;
+}
+
+.nav-link-btn span {
+  padding: 2px 6px;
+  border-radius: 0;
+  transition: all 0.15s ease;
+}
+
+.nav-link-btn:hover {
+  color: var(--ink);
+}
+
+.nav-link-btn:hover span {
+  background-color: var(--invert-bg);
+  color: var(--invert-fg);
+}
+
+.nav-link-btn.active span {
+  background-color: var(--invert-bg);
+  color: var(--invert-fg);
+}
+
+.nav-right {
+  display: flex;
+  align-items: stretch;
+}
+
+.header-icon-btn {
+  display: flex;
+  align-items: center;
   justify-content: center;
-}
-.profilePic {
-  width: 450px;
-  height: 450px;
-  border-radius: 50%;
-}
-.profilePic:hover{
-  transform: scale(1.2);
-  transition: all 0.3s ease-in-out;
-}
-.navbar, section {
-  margin-top: 20px !important;
-  margin-left: 20px !important;
-  margin-right: 20px !important;
-  background-color: #caf0f8;
-  border-radius: 5px;
+  width: 48px;
+  height: 48px;
+  border-left: 1px solid var(--line);
+  color: var(--muted);
+  transition: all 0.15s ease;
+  background: none;
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
 }
 
-section {
-  height: 82vh;
-  border-radius: 5px;
-  margin-bottom: 20px !important;
+.header-icon-btn:hover {
+  background-color: var(--invert-bg);
+  color: var(--invert-fg);
 }
 
-.eduCard {
-  text-align: center;
-  background-color: white;
-  padding: 40px !important;
-  width: 400px !important;
-  height: 400px;
+.header-cta-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0 1.25rem;
+  border-left: 1px solid var(--line);
+  background-color: var(--invert-bg);
+  color: var(--invert-fg);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: none;
+  transition: opacity 0.15s ease;
+  white-space: nowrap;
 }
-p-button {
-  text-align: center;
-  width: 150px;
-  padding-left: 15px;
-  padding-right: 15px;
+
+.header-cta-btn:hover {
+  opacity: 0.85;
 }
-.name,
-h1,
-.heading span {
-  color: #0077b6;
-  font-size: 40px;
-  font-weight: bold;
+
+@media (min-width: 768px) {
+  .header-cta-btn {
+    display: inline-flex;
+  }
 }
-.heading span {
-  color: #023e8a;
-  font-weight: bold;
+
+.mobile-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-left: 1px solid var(--line);
+  color: var(--muted);
+  background: none;
 }
-.connect {
-  color: #0077b6;
-  margin-bottom: 30px;
+
+@media (min-width: 1024px) {
+  .mobile-toggle-btn {
+    display: none;
+  }
 }
-.contextAbout {
-  text-align: justify;
-  width: 80%;
+
+/* Mobile Nav Drawer */
+.mobile-drawer {
+  position: fixed;
+  top: 48px;
+  left: 0;
+  right: 0;
+  background-color: var(--bg);
+  border-bottom: 1px solid var(--line);
+  z-index: 49;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+  animation: slideDown 0.2s var(--ease-editorial);
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mobile-nav-item {
+  display: block;
+  padding: 0.75rem 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: none;
+  color: var(--muted);
+  border-bottom: 1px solid var(--line);
+}
+
+.mobile-nav-item:hover,
+.mobile-nav-item.active {
+  color: var(--ink-strong);
+  background-color: var(--bg-raised);
+}
+
+/* ==========================================================================
+   ArtCraft Signature Right Side-Rail & Dynamic Scroll Tracker
+   ========================================================================== */
+
+.side-rail {
+  position: fixed;
+  right: 0;
+  top: 48px;
+  bottom: 0;
+  width: 250px;
+  z-index: 40;
+  pointer-events: none;
+  display: none;
+  user-select: none;
+}
+
+@media (min-width: 1280px) {
+  .side-rail {
+    display: block;
+  }
+}
+
+/* ZONE 1 (TOP RIGHT): Passed items that user has scrolled beyond */
+.top-rail-stack {
+  position: absolute;
+  top: 1.5rem;
+  right: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.35rem;
+  text-align: right;
+  pointer-events: auto;
+  z-index: 10;
+}
+
+.rail-passed-btn {
+  background: none;
+  border: none;
+  padding: 2px 0;
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 11px;
   font-weight: 500;
-}
-.skillsGrid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  grid-column-gap: 20px;
-  grid-row-gap: 20px;
-}
-
-.buttons {
-  padding-bottom: 30px;
-  text-align: center;
+  letter-spacing: 0.12em;
+  text-transform: none;
+  color: var(--muted);
+  cursor: pointer;
+  text-align: right;
+  transition: color 0.2s ease, transform 0.2s ease;
+  outline: none;
 }
 
-body {
-  overflow: hidden;
+.rail-passed-btn:hover {
+  color: var(--ink-strong);
+  transform: translateX(-3px);
 }
 
-@media (max-width: 990px) {
-  .navbar-nav {
-    flex-direction: column;
-    width: 100%;
-  }
-  .navbar-nav .nav-item {
-    margin-left: 0;
-    margin-right: 0;
-    text-align: center;
-  }
+/* ZONE 2 (CENTER RAIL): Active section displayed VERTICALLY in the middle */
+.active-rail-slot {
+  position: absolute;
+  top: 50%;
+  right: 2.25rem;
+  transform: translateY(-50%);
+  pointer-events: auto;
+  cursor: pointer;
+  z-index: 15;
+  padding: 0.5rem 0;
+  transition: transform 0.25s var(--ease-editorial);
+}
+
+.active-rail-slot:hover {
+  transform: translateY(-50%) translateX(-4px);
+}
+
+.active-vertical-label {
+  display: inline-block;
+  writing-mode: vertical-rl;
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-strong);
+  white-space: nowrap;
+  user-select: none;
+  transition: color 0.2s ease;
+}
+
+.active-rail-slot:hover .active-vertical-label {
+  color: var(--accent);
+}
+
+/* ZONE 3 (BOTTOM RIGHT): Upcoming items waiting before activation */
+.upcoming-rail-stack {
+  position: absolute;
+  bottom: 2rem;
+  right: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.45rem;
+  text-align: right;
+  pointer-events: auto;
+  z-index: 10;
+}
+
+.rail-upcoming-btn {
+  background: none;
+  border: none;
+  padding: 2px 0;
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: none;
+  color: var(--muted);
+  opacity: 0.55;
+  cursor: pointer;
+  text-align: right;
+  transition: opacity 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  outline: none;
+}
+
+.rail-upcoming-btn:hover {
+  opacity: 1;
+  color: var(--ink-strong);
+  transform: translateX(-3px);
+}
+
+.rail-upcoming-btn:hover {
+  opacity: 1;
+  color: var(--ink-strong);
+  transform: translateX(-3px);
+}
+
+/* ==========================================================================
+   Precision Scrollbar Ruler & Needle
+   ========================================================================== */
+
+.ruler-container {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 28px;
+  pointer-events: auto;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem 0;
+  border-left: 1px solid var(--line);
+}
+
+.ruler-tick {
+  position: relative;
+  width: 100%;
+  height: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.ruler-tick::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  width: 6px;
+  height: 1px;
+  background-color: var(--line-strong);
+}
+
+.ruler-tick.major::before {
+  width: 10px;
+}
+
+.ruler-number {
+  position: absolute;
+  right: 14px;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--faint);
+  line-height: 1;
+}
+
+/* Live dynamic needle marker */
+.ruler-needle {
+  position: absolute;
+  left: -48px;
+  right: 0;
+  height: 1px;
+  background-color: var(--accent);
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+  transition: top 0.05s linear;
+}
+
+.needle-readout {
+  position: absolute;
+  right: 32px;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--accent-ink);
+  background-color: var(--bg);
+  padding: 1px 3px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* Main page layout */
+.main-wrapper {
+  position: relative;
+  min-height: 100vh;
 }
