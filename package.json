@@ -4,7 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --base-href=/angularPortfolio/",
+    "postbuild": "node -e \"const fs = require('fs'); if (fs.existsSync('docs/index.html')) fs.copyFileSync('docs/index.html', 'docs/404.html');\"",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "prettyprint": "npx prettier . --write",

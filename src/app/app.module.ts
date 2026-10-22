@@ -42,7 +42,7 @@ import { ContactComponent } from './contact/contact.component';
       { path: 'projects', component: ProjectsComponent },
       { path: 'contact', component: ContactComponent },
       { path: '**', redirectTo: '/home', pathMatch: 'full' },
-    ]),
+    ], { useHash: true }),
     KnobModule,
     ReactiveFormsModule,
   ],
