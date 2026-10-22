@@ -5,7 +5,6 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --configuration production --base-href=/angularPortfolio/ --output-hashing=all",
-    "postbuild": "node -e \"const fs = require('fs'); if (fs.existsSync('docs/index.html')) fs.copyFileSync('docs/index.html', 'docs/404.html');\"",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "prettyprint": "npx prettier . --write",
