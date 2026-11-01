@@ -251,18 +251,19 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
     if (savedTheme === 'dark') {
       this.isDarkMode = true;
       document.documentElement.setAttribute('data-theme', 'dark');
+      document.documentElement.setAttribute('data-bs-theme', 'dark');
     } else if (savedTheme === 'light') {
       this.isDarkMode = false;
       document.documentElement.setAttribute('data-theme', 'light');
+      document.documentElement.setAttribute('data-bs-theme', 'light');
     } else {
       const prefersDark =
         window.matchMedia &&
         window.matchMedia('(prefers-color-scheme: dark)').matches;
       this.isDarkMode = prefersDark;
-      document.documentElement.setAttribute(
-        'data-theme',
-        prefersDark ? 'dark' : 'light'
-      );
+      const themeStr = prefersDark ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', themeStr);
+      document.documentElement.setAttribute('data-bs-theme', themeStr);
     }
   }
 
@@ -270,6 +271,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
     this.isDarkMode = !this.isDarkMode;
     const themeStr = this.isDarkMode ? 'dark' : 'light';
     document.documentElement.setAttribute('data-theme', themeStr);
+    document.documentElement.setAttribute('data-bs-theme', themeStr);
     localStorage.setItem('artcraft-theme', themeStr);
   }
 

@@ -46,6 +46,10 @@
   font-feature-settings: var(--typography-label-md-font-feature);
 }
 
+[data-theme="dark"] .hero-greeting {
+  color: rgba(249, 250, 251, 0.72) !important;
+}
+
 .hero-title {
   font-family: var(--typography-headline-display-font-family);
   font-size: var(--typography-headline-display-font-size);
@@ -203,6 +207,22 @@
   object-fit: cover;
   transition: transform 0.4s var(--ease-editorial), filter 0.4s ease;
   filter: contrast(1.05);
+}
+
+.profile-img-light {
+  display: block;
+}
+
+.profile-img-dark {
+  display: none;
+}
+
+[data-theme="dark"] .profile-img-light {
+  display: none !important;
+}
+
+[data-theme="dark"] .profile-img-dark {
+  display: block !important;
 }
 
 .profile-console:hover .profile-img {
