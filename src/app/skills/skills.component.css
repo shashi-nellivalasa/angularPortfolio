@@ -10,7 +10,8 @@
 .skills-grid {
   display: grid;
   grid-template-columns: 1fr;
-  border-left: 1px solid var(--line);
+  gap: var(--spacing-md);
+  padding: var(--spacing-lg) var(--spacing-sm);
 }
 
 @media (min-width: 640px) {
@@ -22,6 +23,7 @@
 @media (min-width: 1024px) {
   .skills-grid {
     grid-template-columns: repeat(3, 1fr);
+    padding: var(--spacing-lg) var(--spacing-md);
   }
 }
 
@@ -29,16 +31,17 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 2.5rem 2rem;
-  gap: 1.75rem;
-  border-right: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-  background-color: var(--bg);
-  transition: background-color 0.2s ease;
+  padding: var(--card-padding);
+  gap: var(--spacing-sm);
+  border: var(--card-border);
+  border-radius: var(--card-rounded);
+  background-color: var(--card-surface-bg);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .skill-card:hover {
-  background-color: var(--bg-raised);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px var(--color-tertiary-20);
 }
 
 .skill-card-header {
@@ -50,40 +53,46 @@
 .skill-icon-box {
   width: 38px;
   height: 38px;
-  border: 1px solid var(--line-strong);
+  border: 1px solid var(--button-primary-bg);
+  border-radius: var(--rounded-none);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--accent-ink);
-  background-color: var(--bg-raised);
+  color: var(--button-primary-text);
+  background-color: var(--button-primary-bg);
 }
 
 .skill-card-main {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: var(--spacing-xs);
 }
 
 .skill-category-tag {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.1em;
-  color: var(--faint);
+  font-family: var(--typography-label-md-font-family);
+  font-size: var(--typography-label-md-font-size);
+  font-weight: var(--typography-label-md-font-weight);
+  letter-spacing: var(--typography-label-md-letter-spacing);
+  font-feature-settings: var(--typography-label-md-font-feature);
+  color: var(--color-tertiary);
   text-transform: uppercase;
 }
 
 .skill-title {
-  font-family: var(--font-display);
-  font-size: 1.4rem;
-  font-weight: 700;
-  letter-spacing: -0.025em;
+  font-family: var(--typography-headline-md-font-family);
+  font-size: var(--typography-headline-md-font-size);
+  font-weight: var(--typography-headline-md-font-weight);
+  line-height: var(--typography-headline-md-line-height);
+  letter-spacing: var(--typography-headline-md-letter-spacing);
   color: var(--ink-strong);
-  line-height: 1.15;
 }
 
 .skill-desc {
-  font-size: 0.95rem;
-  line-height: 1.6;
+  font-family: var(--typography-body-sm-font-family);
+  font-size: var(--typography-body-sm-font-size);
+  font-weight: var(--typography-body-sm-font-weight);
+  line-height: var(--typography-body-sm-line-height);
+  letter-spacing: var(--typography-body-sm-letter-spacing);
   color: var(--muted);
 }
 
@@ -91,8 +100,8 @@
 .skill-gauge {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  padding-top: 1rem;
+  gap: var(--spacing-xs);
+  padding-top: var(--spacing-sm);
   border-top: 1px solid var(--line);
 }
 
@@ -103,7 +112,7 @@
 }
 
 .gauge-label {
-  font-family: var(--font-mono);
+  font-family: var(--typography-label-sm-font-family);
   font-size: 10px;
   letter-spacing: 0.1em;
   color: var(--faint);
@@ -111,22 +120,26 @@
 }
 
 .gauge-val {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 700;
+  font-family: var(--typography-label-lg-font-family);
+  font-size: var(--typography-label-lg-font-size);
+  font-weight: var(--typography-label-lg-font-weight);
   color: var(--ink-strong);
 }
 
 .gauge-track {
-  height: 2px;
+  height: 3px;
   width: 100%;
-  background-color: var(--line);
+  background-color: var(--color-neutral);
   overflow: hidden;
   position: relative;
 }
 
 .gauge-fill {
   height: 100%;
-  background-color: var(--accent);
+  background-color: var(--color-primary);
   transition: width 0.6s var(--ease-editorial);
+}
+
+[data-theme="dark"] .gauge-fill {
+  background-color: var(--color-secondary);
 }

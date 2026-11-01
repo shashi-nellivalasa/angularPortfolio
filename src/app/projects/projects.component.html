@@ -19,7 +19,7 @@
     <div *ngFor="let project of projects" class="project-card">
       <!-- Card Top Bar: Badge & Category -->
       <div class="card-top-bar">
-        <span class="card-num-badge" [style.backgroundColor]="project.badgeColor">
+        <span class="card-num-badge">
           {{ project.id }}
         </span>
         <span class="card-category-label">
@@ -30,7 +30,7 @@
       <!-- Media Preview Frame -->
       <div class="card-media-frame">
         <div class="card-ui-lines"></div>
-        <div class="card-app-icon-badge" [style.backgroundColor]="project.badgeColor">
+        <div class="card-app-icon-badge">
           <i [class]="project.icon" style="font-size: 1.5rem;"></i>
         </div>
       </div>

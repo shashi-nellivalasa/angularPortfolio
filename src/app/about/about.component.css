@@ -22,54 +22,61 @@
 }
 
 .about-headline {
-  font-family: var(--font-display);
-  font-size: 2.25rem;
-  font-weight: 600;
-  line-height: 1.05;
-  letter-spacing: -0.035em;
+  font-family: var(--typography-headline-display-font-family);
+  font-size: var(--typography-headline-display-font-size);
+  font-weight: var(--typography-headline-display-font-weight);
+  line-height: calc(var(--typography-headline-display-line-height) * 1.08);
+  letter-spacing: var(--typography-headline-display-letter-spacing);
+  font-feature-settings: var(--typography-headline-display-font-feature);
   color: var(--ink-strong);
+  margin-bottom: var(--spacing-sm);
 }
 
 @media (min-width: 640px) {
   .about-headline {
-    font-size: 3rem;
+    font-size: calc(var(--typography-headline-display-font-size) * 1.35);
+    line-height: calc(var(--typography-headline-display-line-height) * 1.35 * 1.08);
   }
 }
 
 .about-body-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2.5rem;
-  margin-bottom: 3.5rem;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
 }
 
 @media (min-width: 1024px) {
   .about-body-grid {
     grid-template-columns: 1.6fr 1fr;
-    gap: 4rem;
+    gap: calc(var(--spacing-xl) * 0.5);
   }
 }
 
 .about-text {
-  font-size: 1.125rem;
-  line-height: 1.65;
+  font-family: var(--typography-body-md-font-family);
+  font-size: var(--typography-body-md-font-size);
+  font-weight: var(--typography-body-md-font-weight);
+  line-height: var(--typography-body-md-line-height);
+  letter-spacing: var(--typography-body-md-letter-spacing);
   color: var(--muted);
 }
 
 .about-stats-panel {
-  border: 1px solid var(--line);
-  background-color: var(--bg-raised);
-  padding: 1.5rem;
+  border: var(--card-border);
+  border-radius: var(--card-rounded);
+  background-color: var(--card-surface-bg);
+  padding: var(--card-padding);
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: var(--spacing-sm);
 }
 
 .stat-item {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
-  padding-bottom: 1rem;
+  gap: var(--spacing-xs);
+  padding-bottom: var(--spacing-sm);
   border-bottom: 1px solid var(--line);
 }
 
@@ -79,15 +86,20 @@
 }
 
 .stat-value {
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-family: var(--typography-headline-lg-font-family);
+  font-size: var(--typography-headline-lg-font-size);
+  font-weight: var(--typography-headline-lg-font-weight);
+  line-height: var(--typography-headline-lg-line-height);
+  letter-spacing: var(--typography-headline-lg-letter-spacing);
   color: var(--ink-strong);
-  letter-spacing: -0.02em;
 }
 
 .stat-desc {
-  font-size: 0.875rem;
+  font-family: var(--typography-body-sm-font-family);
+  font-size: var(--typography-body-sm-font-size);
+  font-weight: var(--typography-body-sm-font-weight);
+  line-height: var(--typography-body-sm-line-height);
+  letter-spacing: var(--typography-body-sm-letter-spacing);
   color: var(--muted);
 }
 
@@ -95,8 +107,7 @@
 .pillars-grid {
   display: grid;
   grid-template-columns: 1fr;
-  border-top: 1px solid var(--line);
-  border-left: 1px solid var(--line);
+  gap: var(--spacing-md);
 }
 
 @media (min-width: 768px) {
@@ -106,32 +117,37 @@
 }
 
 .pillar-card {
-  padding: 2rem 1.5rem;
-  border-right: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-  background-color: var(--bg);
-  transition: background-color 0.2s ease;
+  padding: var(--card-padding);
+  border: var(--card-border);
+  border-radius: var(--card-rounded);
+  background-color: var(--card-surface-bg);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .pillar-card:hover {
-  background-color: var(--bg-raised);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px var(--color-tertiary-20);
 }
 
 .pillar-num {
-  margin-bottom: 1.25rem;
+  margin-bottom: var(--spacing-sm);
 }
 
 .pillar-title {
-  font-family: var(--font-display);
-  font-size: 1.25rem;
-  font-weight: 700;
+  font-family: var(--typography-headline-md-font-family);
+  font-size: var(--typography-headline-md-font-size);
+  font-weight: var(--typography-headline-md-font-weight);
+  line-height: var(--typography-headline-md-line-height);
+  letter-spacing: var(--typography-headline-md-letter-spacing);
   color: var(--ink-strong);
-  margin-bottom: 0.75rem;
-  letter-spacing: -0.02em;
+  margin-bottom: var(--spacing-xs);
 }
 
 .pillar-desc {
-  font-size: 0.95rem;
-  line-height: 1.6;
+  font-family: var(--typography-body-sm-font-family);
+  font-size: var(--typography-body-sm-font-size);
+  font-weight: var(--typography-body-sm-font-weight);
+  line-height: var(--typography-body-sm-line-height);
+  letter-spacing: var(--typography-body-sm-letter-spacing);
   color: var(--muted);
 }

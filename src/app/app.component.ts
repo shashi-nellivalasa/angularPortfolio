@@ -111,22 +111,9 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
 
   // --- GSAP Navigation Text Animations ---
   private initNavTextAnimations(): void {
-    // 1. Top Navbar Text Stagger Entrance
-    const topNavSpans = document.querySelectorAll(
-      '.site-header .nav-link-btn span, .site-header .header-cta-btn'
-    );
-    if (topNavSpans.length > 0) {
-      gsap.from(topNavSpans, {
-        y: -14,
-        opacity: 0,
-        duration: 0.6,
-        stagger: 0.035,
-        ease: 'power2.out',
-        delay: 0.1,
-      });
-    }
+    // Note: Top Navbar links and CTA maintain solid opacity: 1 via CSS for immediate readability and reliability.
 
-    // 2. Initial Side Rail Active Text Entrance
+    // Side Rail Active Text Entrance
     const verticalText = document.querySelector('.active-vertical-text');
     if (verticalText) {
       gsap.from(verticalText, {

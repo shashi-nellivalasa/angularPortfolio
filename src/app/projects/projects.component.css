@@ -10,7 +10,8 @@
 .projects-grid {
   display: grid;
   grid-template-columns: 1fr;
-  border-left: 1px solid var(--line);
+  gap: var(--spacing-md);
+  padding: var(--spacing-lg) var(--spacing-sm);
 }
 
 @media (min-width: 640px) {
@@ -22,42 +23,47 @@
 @media (min-width: 1024px) {
   .projects-grid {
     grid-template-columns: repeat(4, 1fr);
+    padding: var(--spacing-lg) var(--spacing-md);
   }
 }
 
 .project-card {
   display: flex;
   flex-direction: column;
-  border-right: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-  background-color: var(--bg);
-  transition: background-color 0.2s ease;
+  border: var(--card-border);
+  border-radius: var(--card-rounded);
+  background-color: var(--card-surface-bg);
+  overflow: hidden;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .project-card:hover {
-  background-color: var(--bg-raised);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px var(--color-tertiary-20);
 }
 
 .card-top-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.5rem 1rem;
+  padding: 0.6rem var(--spacing-sm);
   border-bottom: 1px solid var(--line);
   background-color: var(--bg);
 }
 
 .card-num-badge {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  font-weight: 700;
-  color: #ffffff;
-  padding: 1px 6px;
-  border-radius: 0;
+  font-family: var(--typography-label-lg-font-family);
+  font-size: var(--typography-label-lg-font-size);
+  font-weight: var(--typography-label-lg-font-weight);
+  line-height: var(--typography-label-lg-line-height);
+  color: var(--color-secondary);
+  background-color: var(--color-primary);
+  padding: 3px var(--spacing-xs);
+  border-radius: var(--rounded-none);
 }
 
 .card-category-label {
-  font-family: var(--font-mono);
+  font-family: var(--typography-label-sm-font-family);
   font-size: 10px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -71,10 +77,8 @@
 /* Media graphic preview */
 .card-media-frame {
   position: relative;
-  height: 180px;
-  background: linear-gradient(135deg, rgba(var(--bg-rgb), 0.5) 0%, rgba(var(--bg-rgb), 0.95) 100%),
-              radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.06) 1px, transparent 1px);
-  background-size: auto, 12px 12px;
+  height: 170px;
+  background-color: var(--bg-sunken);
   border-bottom: 1px solid var(--line);
   display: flex;
   align-items: center;
@@ -84,7 +88,7 @@
 
 .card-ui-lines {
   position: absolute;
-  inset: 12px;
+  inset: var(--spacing-xs);
   border: 1px dashed var(--line);
   pointer-events: none;
 }
@@ -92,63 +96,70 @@
 .card-app-icon-badge {
   position: relative;
   z-index: 2;
-  width: 54px;
-  height: 54px;
-  border-radius: 12px;
+  width: 52px;
+  height: 52px;
+  border-radius: var(--card-rounded);
+  border: var(--card-border);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #ffffff;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
-  transition: transform 0.3s var(--ease-editorial);
+  color: var(--color-secondary);
+  background-color: var(--color-primary);
+  transition: transform 0.25s var(--ease-editorial), background-color 0.2s ease, color 0.2s ease;
 }
 
 .project-card:hover .card-app-icon-badge {
-  transform: scale(1.08) translateY(-2px);
+  transform: scale(1.06);
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+  border-color: var(--color-secondary);
 }
 
 /* Card details */
 .card-body {
-  padding: 1.5rem;
+  padding: var(--card-padding);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   flex: 1;
-  gap: 1.25rem;
+  gap: var(--spacing-sm);
 }
 
 .card-body-main {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: var(--spacing-xs);
 }
 
 .project-display-title {
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 700;
-  letter-spacing: -0.025em;
+  font-family: var(--typography-headline-md-font-family);
+  font-size: var(--typography-headline-md-font-size);
+  font-weight: var(--typography-headline-md-font-weight);
+  line-height: var(--typography-headline-md-line-height);
+  letter-spacing: var(--typography-headline-md-letter-spacing);
   color: var(--ink-strong);
-  line-height: 1.1;
 }
 
 .project-sub-tag {
-  font-family: var(--font-mono);
+  font-family: var(--typography-label-sm-font-family);
   font-size: 10px;
   color: var(--faint);
   letter-spacing: 0.08em;
 }
 
 .project-desc-text {
-  font-size: 0.925rem;
-  line-height: 1.6;
+  font-family: var(--typography-body-sm-font-family);
+  font-size: var(--typography-body-sm-font-size);
+  font-weight: var(--typography-body-sm-font-weight);
+  line-height: var(--typography-body-sm-line-height);
+  letter-spacing: var(--typography-body-sm-letter-spacing);
   color: var(--muted);
 }
 
 .card-body-footer {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: var(--spacing-sm);
 }
 
 .card-tags-row {
@@ -160,20 +171,21 @@
 .card-explore-link {
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
+  gap: var(--spacing-xs);
+  font-family: var(--typography-label-lg-font-family);
+  font-size: var(--typography-label-lg-font-size);
+  font-weight: var(--typography-label-lg-font-weight);
+  letter-spacing: var(--typography-label-lg-letter-spacing);
+  font-feature-settings: var(--typography-label-lg-font-feature);
   text-transform: uppercase;
   color: var(--ink);
   transition: color 0.15s ease;
-  padding-top: 0.5rem;
+  padding-top: var(--spacing-xs);
   border-top: 1px solid var(--line);
 }
 
 .card-explore-link:hover {
-  color: var(--accent-ink);
+  color: var(--color-tertiary);
 }
 
 .card-explore-link i {

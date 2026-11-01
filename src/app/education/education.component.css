@@ -10,7 +10,14 @@
 .timeline-grid {
   display: grid;
   grid-template-columns: 1fr;
-  border-left: 1px solid var(--line);
+  gap: var(--spacing-md);
+  padding: var(--spacing-lg) var(--spacing-sm);
+}
+
+@media (min-width: 768px) {
+  .timeline-grid {
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
 }
 
 @media (min-width: 1024px) {
@@ -23,16 +30,17 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 2.5rem 2rem;
-  gap: 1.5rem;
-  border-right: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-  background-color: var(--bg);
-  transition: background-color 0.2s ease;
+  padding: var(--card-padding);
+  gap: var(--spacing-sm);
+  border: var(--card-border);
+  border-radius: var(--card-rounded);
+  background-color: var(--card-surface-bg);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .timeline-card:hover {
-  background-color: var(--bg-raised);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px var(--color-tertiary-20);
 }
 
 .card-step-row {
@@ -42,9 +50,11 @@
 }
 
 .duration-tag {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.1em;
+  font-family: var(--typography-label-md-font-family);
+  font-size: var(--typography-label-md-font-size);
+  font-weight: var(--typography-label-md-font-weight);
+  letter-spacing: var(--typography-label-md-letter-spacing);
+  font-feature-settings: var(--typography-label-md-font-feature);
   color: var(--faint);
   text-transform: uppercase;
 }
@@ -52,30 +62,35 @@
 .card-main-info {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: var(--spacing-xs);
 }
 
 .degree-title {
-  font-family: var(--font-display);
-  font-size: 1.35rem;
-  font-weight: 700;
-  letter-spacing: -0.025em;
+  font-family: var(--typography-headline-md-font-family);
+  font-size: var(--typography-headline-md-font-size);
+  font-weight: var(--typography-headline-md-font-weight);
+  line-height: var(--typography-headline-md-line-height);
+  letter-spacing: var(--typography-headline-md-letter-spacing);
   color: var(--ink-strong);
-  line-height: 1.15;
 }
 
 .institute-label {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--accent-ink);
-  letter-spacing: 0.08em;
+  font-family: var(--typography-label-md-font-family);
+  font-size: var(--typography-label-md-font-size);
+  font-weight: var(--typography-label-md-font-weight);
+  line-height: var(--typography-label-md-line-height);
+  letter-spacing: var(--typography-label-md-letter-spacing);
+  font-feature-settings: var(--typography-label-md-font-feature);
+  color: var(--color-tertiary);
   text-transform: uppercase;
 }
 
 .description-text {
-  font-size: 0.95rem;
-  line-height: 1.6;
+  font-family: var(--typography-body-sm-font-family);
+  font-size: var(--typography-body-sm-font-size);
+  font-weight: var(--typography-body-sm-font-weight);
+  line-height: var(--typography-body-sm-line-height);
+  letter-spacing: var(--typography-body-sm-letter-spacing);
   color: var(--muted);
 }
 
