@@ -217,10 +217,14 @@
   display: none;
 }
 
+:host-context([data-theme="dark"]) .profile-img-light,
+:host-context([data-bs-theme="dark"]) .profile-img-light,
 [data-theme="dark"] .profile-img-light {
   display: none !important;
 }
 
+:host-context([data-theme="dark"]) .profile-img-dark,
+:host-context([data-bs-theme="dark"]) .profile-img-dark,
 [data-theme="dark"] .profile-img-dark {
   display: block !important;
 }

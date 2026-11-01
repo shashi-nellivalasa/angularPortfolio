@@ -251,6 +251,27 @@
   --focus-glow: 0 0 16px rgba(59, 130, 246, 0.25);
 }
 
+/* ==========================================================================
+   Dual-Theme Profile Image Switching (Global rules to bypass encapsulation)
+   ========================================================================== */
+.profile-img-light {
+  display: block;
+}
+
+.profile-img-dark {
+  display: none;
+}
+
+[data-theme="dark"] .profile-img-light,
+[data-bs-theme="dark"] .profile-img-light {
+  display: none !important;
+}
+
+[data-theme="dark"] .profile-img-dark,
+[data-bs-theme="dark"] .profile-img-dark {
+  display: block !important;
+}
+
 /* Base resets & typography */
 *, *::before, *::after {
   box-sizing: border-box;

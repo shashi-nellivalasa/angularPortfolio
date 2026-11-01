@@ -110,11 +110,13 @@
               src="assets/profile-light.png"
               alt="Shashi Nellivalasa — Full Stack Engineer (Light Mode)"
               class="profile-img profile-img-light"
+              [style.display]="isDarkMode ? 'none' : 'block'"
             />
             <img
               src="assets/profile-dark.png"
               alt="Shashi Nellivalasa — Full Stack Engineer (Dark Mode)"
               class="profile-img profile-img-dark"
+              [style.display]="isDarkMode ? 'block' : 'none'"
             />
           </div>
 
