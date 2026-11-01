@@ -1,37 +1,55 @@
 <!-- ==========================================================================
-     SECTION 03: EDUCATION
+     SECTION 04: ACADEMIC EDUCATION
      ========================================================================== -->
 <section id="education" class="education-section">
   <!-- Sticky Eyebrow Header -->
   <div class="sticky-eyebrow">
     <p class="hud-label text-muted">
-      <span class="text-faint">03</span>
-      <span style="margin: 0 0.5rem;" class="text-faint">/</span>
+      <span class="text-faint">04</span>
+      <span style="margin: 0 var(--spacing-xs);" class="text-faint">/</span>
       EDUCATION
     </p>
     <p class="hud-label text-faint" style="display: none; @media(min-width: 640px) { display: block; }">
-      Professional Experience & Academic Engineering Timeline
+      Academic Foundations &amp; Verified Engineering Credentials
     </p>
   </div>
 
-  <!-- Editorial Timeline Grid -->
-  <div class="timeline-grid">
-    <div *ngFor="let item of events" class="timeline-card">
-      <div class="card-step-row">
-        <span class="hud-label text-faint">{{ item.step }}</span>
-        <span class="duration-tag">{{ item.duration }}</span>
-      </div>
+  <div class="education-container">
+    <div class="education-grid">
+      <article *ngFor="let item of educationList" class="record-card">
+        <!-- Card Top Bar -->
+        <div class="record-top-row">
+          <div class="step-group">
+            <span class="step-pill">{{ item.step }}</span>
+            <span class="category-tag">{{ item.category }}</span>
+          </div>
+          <span class="duration-tag">{{ item.duration }}</span>
+        </div>
 
-      <div class="card-main-info">
-        <span class="institute-label">{{ item.institute }}</span>
-        <h3 class="degree-title">{{ item.degree }}</h3>
-        <p class="description-text">{{ item.description }}</p>
-      </div>
+        <!-- Main Info -->
+        <div class="record-content">
+          <h3 class="degree-heading">{{ item.degree }}</h3>
+          <span class="institute-name">{{ item.institute }}</span>
+          <p class="record-description">{{ item.description }}</p>
+        </div>
 
-      <div class="card-footer-score">
-        <span class="hud-tag active">{{ item.score }}</span>
-        <span class="hud-label text-faint">VERIFIED RECORD</span>
-      </div>
+        <!-- Coursework Domain Chips -->
+        <div class="coursework-row">
+          <span class="coursework-label">CORE DOMAINS:</span>
+          <div class="coursework-chips">
+            <span *ngFor="let c of item.coursework" class="course-chip">{{ c }}</span>
+          </div>
+        </div>
+
+        <!-- Card Bottom Evaluation -->
+        <div class="record-footer">
+          <div class="score-box">
+            <span class="score-label">{{ item.scoreLabel }}</span>
+            <span class="score-value">{{ item.score }}</span>
+          </div>
+          <span class="verified-indicator">VERIFIED ACADEMIC RECORD</span>
+        </div>
+      </article>
     </div>
   </div>
 </section>

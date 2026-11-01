@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Education Component Styles (ArtCraft Section 05: My Journey)
+   Education Component Styles (ArtCraft Section 04: Academic Education)
    ========================================================================== */
 
 .education-section {
@@ -7,46 +7,80 @@
   border-bottom: 1px solid var(--line);
 }
 
-.timeline-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--spacing-md);
+.education-container {
   padding: var(--spacing-lg) var(--spacing-sm);
 }
 
 @media (min-width: 768px) {
-  .timeline-grid {
+  .education-container {
     padding: var(--spacing-lg) var(--spacing-md);
   }
 }
 
-@media (min-width: 1024px) {
-  .timeline-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-.timeline-card {
+.education-grid {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding: var(--card-padding);
+  gap: var(--spacing-md);
+}
+
+.record-card {
+  display: flex;
+  flex-direction: column;
   gap: var(--spacing-sm);
+  padding: var(--card-padding);
   border: var(--card-border);
   border-radius: var(--card-rounded);
   background-color: var(--card-surface-bg);
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.timeline-card:hover {
+.record-card:hover {
   border-color: var(--color-primary);
   box-shadow: 0 0 0 2px var(--color-tertiary-20);
 }
 
-.card-step-row {
+.record-top-row {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+  gap: var(--spacing-xs);
+  padding-bottom: var(--spacing-xs);
+  border-bottom: 1px solid var(--line);
+}
+
+.step-group {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.step-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  font-family: var(--typography-label-lg-font-family);
+  font-size: var(--typography-label-lg-font-size);
+  font-weight: var(--typography-label-lg-font-weight);
+  letter-spacing: var(--typography-label-lg-letter-spacing);
+  padding: 3px var(--spacing-xs);
+  border-radius: var(--rounded-none);
+}
+
+[data-theme="dark"] .step-pill {
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+}
+
+.category-tag {
+  font-family: var(--typography-label-sm-font-family);
+  font-size: var(--typography-label-sm-font-size);
+  font-weight: var(--typography-label-sm-font-weight);
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .duration-tag {
@@ -54,18 +88,19 @@
   font-size: var(--typography-label-md-font-size);
   font-weight: var(--typography-label-md-font-weight);
   letter-spacing: var(--typography-label-md-letter-spacing);
-  font-feature-settings: var(--typography-label-md-font-feature);
-  color: var(--faint);
-  text-transform: uppercase;
+  color: var(--ink-strong);
+  background-color: var(--bg-sunken);
+  padding: 3px var(--spacing-xs);
+  border: 1px solid var(--line);
 }
 
-.card-main-info {
+.record-content {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-xs);
 }
 
-.degree-title {
+.degree-heading {
   font-family: var(--typography-headline-md-font-family);
   font-size: var(--typography-headline-md-font-size);
   font-weight: var(--typography-headline-md-font-weight);
@@ -74,30 +109,102 @@
   color: var(--ink-strong);
 }
 
-.institute-label {
+.institute-name {
   font-family: var(--typography-label-md-font-family);
   font-size: var(--typography-label-md-font-size);
   font-weight: var(--typography-label-md-font-weight);
-  line-height: var(--typography-label-md-line-height);
   letter-spacing: var(--typography-label-md-letter-spacing);
-  font-feature-settings: var(--typography-label-md-font-feature);
   color: var(--color-tertiary);
   text-transform: uppercase;
 }
 
-.description-text {
-  font-family: var(--typography-body-sm-font-family);
-  font-size: var(--typography-body-sm-font-size);
-  font-weight: var(--typography-body-sm-font-weight);
-  line-height: var(--typography-body-sm-line-height);
-  letter-spacing: var(--typography-body-sm-letter-spacing);
+.record-description {
+  font-family: var(--typography-body-md-font-family);
+  font-size: var(--typography-body-md-font-size);
+  font-weight: var(--typography-body-md-font-weight);
+  line-height: var(--typography-body-md-line-height);
   color: var(--muted);
 }
 
-.card-footer-score {
+.coursework-row {
   display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-xs) 0;
+}
+
+.coursework-label {
+  font-family: var(--typography-label-sm-font-family);
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--faint);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.coursework-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+}
+
+.course-chip {
+  font-family: var(--typography-label-sm-font-family);
+  font-size: var(--typography-label-sm-font-size);
+  font-weight: var(--typography-label-sm-font-weight);
+  color: var(--ink);
+  background-color: var(--bg-sunken);
+  border: 1px solid var(--line);
+  padding: 3px var(--spacing-xs);
+  border-radius: var(--rounded-none);
+}
+
+.record-footer {
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  padding-top: 1rem;
+  gap: var(--spacing-xs);
+  padding-top: var(--spacing-xs);
   border-top: 1px solid var(--line);
+}
+
+.score-box {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.score-label {
+  font-family: var(--typography-label-sm-font-family);
+  font-size: 10px;
+  color: var(--faint);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.score-value {
+  font-family: var(--typography-label-lg-font-family);
+  font-size: var(--typography-label-lg-font-size);
+  font-weight: var(--typography-label-lg-font-weight);
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+  padding: 3px var(--spacing-xs);
+  border: 1px solid var(--color-primary);
+  border-radius: var(--rounded-none);
+}
+
+[data-theme="dark"] .score-value {
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+
+.verified-indicator {
+  font-family: var(--typography-label-sm-font-family);
+  font-size: var(--typography-label-sm-font-size);
+  font-weight: var(--typography-label-sm-font-weight);
+  color: var(--faint);
+  letter-spacing: var(--typography-label-sm-letter-spacing);
+  text-transform: uppercase;
 }

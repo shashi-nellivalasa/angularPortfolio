@@ -41,6 +41,18 @@
         <button
           type="button"
           class="nav-link-btn"
+          [class.active]="activeSectionId === 'experience'"
+          (click)="scrollToSection('experience')"
+          (mouseenter)="onTopNavHover(true, $event)"
+          (mouseleave)="onTopNavHover(false, $event)"
+        >
+          <span>Experience</span>
+        </button>
+      </li>
+      <li class="nav-item">
+        <button
+          type="button"
+          class="nav-link-btn"
           [class.active]="activeSectionId === 'education'"
           (click)="scrollToSection('education')"
           (mouseenter)="onTopNavHover(true, $event)"
@@ -162,6 +174,14 @@
     (click)="scrollToSection('about')"
   >
     About
+  </button>
+  <button
+    type="button"
+    class="mobile-nav-item"
+    [class.active]="activeSectionId === 'experience'"
+    (click)="scrollToSection('experience')"
+  >
+    Experience
   </button>
   <button
     type="button"

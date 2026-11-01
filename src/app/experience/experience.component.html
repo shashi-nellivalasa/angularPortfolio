@@ -1,0 +1,47 @@
+<!-- ==========================================================================
+     SECTION 03: PROFESSIONAL EXPERIENCE
+     ========================================================================== -->
+<section id="experience" class="experience-section">
+  <!-- Sticky Eyebrow Header -->
+  <div class="sticky-eyebrow">
+    <p class="hud-label text-muted">
+      <span class="text-faint">03</span>
+      <span style="margin: 0 var(--spacing-xs);" class="text-faint">/</span>
+      EXPERIENCE
+    </p>
+    <p class="hud-label text-faint" style="display: none; @media(min-width: 640px) { display: block; }">
+      Production Systems · Frontend &amp; Full Stack Architecture · 3+ Years
+    </p>
+  </div>
+
+  <!-- Editorial Experience Container -->
+  <div class="experience-container">
+    <div class="experience-grid">
+      <article *ngFor="let exp of experiences" class="experience-card">
+        <!-- Top Metadata Row -->
+        <div class="card-meta-row">
+          <div class="meta-left">
+            <span class="step-badge">{{ exp.step }}</span>
+            <span class="scope-tag">{{ exp.scope }}</span>
+          </div>
+          <span class="duration-badge">{{ exp.duration }}</span>
+        </div>
+
+        <!-- Role & Company Info -->
+        <div class="card-main">
+          <span class="company-label">{{ exp.company }}</span>
+          <h3 class="role-title">{{ exp.role }}</h3>
+          <p class="description-text">{{ exp.description }}</p>
+        </div>
+
+        <!-- Tech Stack Tags Row -->
+        <div class="card-footer">
+          <div class="tags-cluster">
+            <span *ngFor="let t of exp.tags" class="tech-chip">{{ t }}</span>
+          </div>
+          <span class="verified-stamp">VERIFIED PRODUCTION ROLE</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

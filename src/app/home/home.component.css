@@ -131,12 +131,14 @@
   transition: all 0.15s ease;
 }
 
-.share-btn:hover {
+.share-btn:hover,
+.share-btn.copied {
   background-color: var(--color-primary);
   color: var(--color-secondary);
 }
 
-[data-theme="dark"] .share-btn:hover {
+[data-theme="dark"] .share-btn:hover,
+[data-theme="dark"] .share-btn.copied {
   background-color: var(--color-secondary);
   color: var(--color-primary);
 }

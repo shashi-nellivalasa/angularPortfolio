@@ -1,0 +1,169 @@
+/* ==========================================================================
+   Experience Component Styles (ArtCraft Section 03: Professional Experience)
+   ========================================================================== */
+
+.experience-section {
+  position: relative;
+  border-bottom: 1px solid var(--line);
+}
+
+.experience-container {
+  padding: var(--spacing-lg) var(--spacing-sm);
+}
+
+@media (min-width: 768px) {
+  .experience-container {
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+}
+
+.experience-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.experience-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--card-padding);
+  gap: var(--spacing-sm);
+  border: var(--card-border);
+  border-radius: var(--card-rounded);
+  background-color: var(--card-surface-bg);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.experience-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px var(--color-tertiary-20);
+}
+
+.card-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-xs);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: var(--spacing-xs);
+}
+
+.meta-left {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.step-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  font-family: var(--typography-label-lg-font-family);
+  font-size: var(--typography-label-lg-font-size);
+  font-weight: var(--typography-label-lg-font-weight);
+  letter-spacing: var(--typography-label-lg-letter-spacing);
+  padding: 3px var(--spacing-xs);
+  border-radius: var(--rounded-none);
+}
+
+[data-theme="dark"] .step-badge {
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+}
+
+.scope-tag {
+  font-family: var(--typography-label-md-font-family);
+  font-size: var(--typography-label-md-font-size);
+  font-weight: var(--typography-label-md-font-weight);
+  letter-spacing: var(--typography-label-md-letter-spacing);
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.duration-badge {
+  font-family: var(--typography-label-md-font-family);
+  font-size: var(--typography-label-md-font-size);
+  font-weight: var(--typography-label-md-font-weight);
+  letter-spacing: var(--typography-label-md-letter-spacing);
+  color: var(--ink-strong);
+  background-color: var(--bg-sunken);
+  padding: 3px var(--spacing-xs);
+  border: 1px solid var(--line);
+}
+
+.card-main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.company-label {
+  font-family: var(--typography-label-md-font-family);
+  font-size: var(--typography-label-md-font-size);
+  font-weight: var(--typography-label-md-font-weight);
+  letter-spacing: var(--typography-label-md-letter-spacing);
+  font-feature-settings: var(--typography-label-md-font-feature);
+  color: var(--color-tertiary);
+  text-transform: uppercase;
+}
+
+.role-title {
+  font-family: var(--typography-headline-md-font-family);
+  font-size: var(--typography-headline-md-font-size);
+  font-weight: var(--typography-headline-md-font-weight);
+  line-height: var(--typography-headline-md-line-height);
+  letter-spacing: var(--typography-headline-md-letter-spacing);
+  color: var(--ink-strong);
+}
+
+.description-text {
+  font-family: var(--typography-body-md-font-family);
+  font-size: var(--typography-body-md-font-size);
+  font-weight: var(--typography-body-md-font-weight);
+  line-height: var(--typography-body-md-line-height);
+  letter-spacing: var(--typography-body-md-letter-spacing);
+  color: var(--muted);
+}
+
+.card-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-sm);
+  padding-top: var(--spacing-xs);
+  border-top: 1px solid var(--line);
+}
+
+.tags-cluster {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.tech-chip {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--typography-label-sm-font-family);
+  font-size: var(--typography-label-sm-font-size);
+  font-weight: var(--typography-label-sm-font-weight);
+  color: var(--ink);
+  background-color: var(--bg-sunken);
+  border: 1px solid var(--line);
+  padding: 3px var(--spacing-xs);
+  border-radius: var(--rounded-none);
+}
+
+.verified-stamp {
+  font-family: var(--typography-label-sm-font-family);
+  font-size: var(--typography-label-sm-font-size);
+  font-weight: var(--typography-label-sm-font-weight);
+  color: var(--faint);
+  letter-spacing: var(--typography-label-sm-letter-spacing);
+  text-transform: uppercase;
+}

@@ -6,16 +6,32 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent {
-  copied = false;
+  copiedLinkedIn = false;
+  copiedGitHub = false;
 
-  copyLink(): void {
+  copyLinkedIn(): void {
     if (navigator && navigator.clipboard) {
-      navigator.clipboard.writeText(window.location.href).then(() => {
-        this.copied = true;
-        setTimeout(() => {
-          this.copied = false;
-        }, 2000);
-      });
+      navigator.clipboard
+        .writeText('https://www.linkedin.com/in/shashi-nellivalasa')
+        .then(() => {
+          this.copiedLinkedIn = true;
+          setTimeout(() => {
+            this.copiedLinkedIn = false;
+          }, 2000);
+        });
+    }
+  }
+
+  copyGitHub(): void {
+    if (navigator && navigator.clipboard) {
+      navigator.clipboard
+        .writeText('https://github.com/shashi-nellivalasa')
+        .then(() => {
+          this.copiedGitHub = true;
+          setTimeout(() => {
+            this.copiedGitHub = false;
+          }, 2000);
+        });
     }
   }
 

@@ -5,7 +5,7 @@
   <!-- Sticky Eyebrow Header -->
   <div class="sticky-eyebrow">
     <p class="hud-label text-muted">
-      <span class="text-faint">06</span>
+      <span class="text-faint">07</span>
       <span style="margin: 0 0.5rem;" class="text-faint">/</span>
       CONTACT
     </p>
@@ -58,51 +58,59 @@
         ✓ Transmission received. Thank you for reaching out!
       </div>
 
-      <!-- Name input -->
-      <div class="form-field-group">
-        <label class="field-label" for="contact-name">Name</label>
-        <input
-          id="contact-name"
-          name="name"
-          type="text"
-          [(ngModel)]="formData.name"
-          placeholder="Your full name"
-          required
-          class="field-input"
-        />
-      </div>
+      <div class="form-columns-grid">
+        <!-- Column 1: Name and Email -->
+        <div class="form-col-inputs">
+          <!-- Name input -->
+          <div class="form-field-group">
+            <label class="field-label" for="contact-name">Name</label>
+            <input
+              id="contact-name"
+              name="name"
+              type="text"
+              [(ngModel)]="formData.name"
+              placeholder="Your full name"
+              required
+              autocomplete="off"
+              class="field-input"
+            />
+          </div>
 
-      <!-- Email input -->
-      <div class="form-field-group">
-        <label class="field-label" for="contact-email">Your E-mail</label>
-        <input
-          id="contact-email"
-          name="email"
-          type="email"
-          [(ngModel)]="formData.email"
-          placeholder="your.email@domain.com"
-          required
-          class="field-input"
-        />
-      </div>
+          <!-- Email input -->
+          <div class="form-field-group">
+            <label class="field-label" for="contact-email">Your E-mail</label>
+            <input
+              id="contact-email"
+              name="email"
+              type="email"
+              [(ngModel)]="formData.email"
+              placeholder="your.email@domain.com"
+              required
+              autocomplete="off"
+              class="field-input"
+            />
+          </div>
+        </div>
 
-      <!-- Message body -->
-      <div class="form-field-group">
-        <label class="field-label" for="contact-message">Your Message</label>
-        <textarea
-          id="contact-message"
-          name="message"
-          [(ngModel)]="formData.message"
-          placeholder="Please describe your project, inquiry, or engineering opportunity..."
-          rows="5"
-          required
-          class="field-textarea"
-        ></textarea>
+        <!-- Column 2: Message -->
+        <div class="form-col-message">
+          <div class="form-field-group message-field-group">
+            <label class="field-label" for="contact-message">Your Message</label>
+            <textarea
+              id="contact-message"
+              name="message"
+              [(ngModel)]="formData.message"
+              placeholder="Please describe your project, inquiry, or engineering opportunity..."
+              required
+              class="field-textarea"
+            ></textarea>
+          </div>
+        </div>
       </div>
 
       <!-- Form submit action -->
-      <div>
-        <button type="submit" class="hud-btn" style="width: 100%;">
+      <div class="form-action-row">
+        <button type="submit" class="hud-btn form-submit-btn">
           <i class="pi pi-send" style="font-size: 0.85rem;"></i>
           Transmit Message
         </button>

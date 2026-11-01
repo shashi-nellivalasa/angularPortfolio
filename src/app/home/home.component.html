@@ -70,26 +70,26 @@
         <!-- Technical Share / Link Strip -->
         <div class="share-bar">
           <span class="hud-label share-label">Share</span>
-          <button type="button" class="share-btn" (click)="copyLink()">
-            <i [class]="copied ? 'pi pi-check' : 'pi pi-copy'" style="font-size: 0.75rem;"></i>
-            {{ copied ? 'Copied' : 'Copy link' }}
+          <button
+            type="button"
+            class="share-btn"
+            [class.copied]="copiedLinkedIn"
+            (click)="copyLinkedIn()"
+            title="Click to copy LinkedIn URL"
+          >
+            <i [class]="copiedLinkedIn ? 'pi pi-check' : 'pi pi-linkedin'" style="font-size: 0.8rem;"></i>
+            {{ copiedLinkedIn ? 'Copied LinkedIn' : 'LinkedIn' }}
           </button>
-          <a
-            href="https://www.linkedin.com/sharing/share-offsite/?url=https://linkedin.com/in/shashi-nellivalasa"
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            type="button"
             class="share-btn"
+            [class.copied]="copiedGitHub"
+            (click)="copyGitHub()"
+            title="Click to copy GitHub URL"
           >
-            LinkedIn
-          </a>
-          <a
-            href="https://github.com/shashi-nellivalasa"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="share-btn"
-          >
-            GitHub
-          </a>
+            <i [class]="copiedGitHub ? 'pi pi-check' : 'pi pi-github'" style="font-size: 0.8rem;"></i>
+            {{ copiedGitHub ? 'Copied GitHub' : 'GitHub' }}
+          </button>
         </div>
       </div>
 
@@ -140,15 +140,18 @@
   <!-- Section 02: About -->
   <app-about></app-about>
 
-  <!-- Section 03: Education -->
+  <!-- Section 03: Experience -->
+  <app-experience></app-experience>
+
+  <!-- Section 04: Education -->
   <app-education></app-education>
 
-  <!-- Section 04: Skills -->
+  <!-- Section 05: Skills -->
   <app-skills></app-skills>
 
-  <!-- Section 05: Projects -->
+  <!-- Section 06: Projects -->
   <app-projects></app-projects>
 
-  <!-- Section 06: Contact -->
+  <!-- Section 07: Contact -->
   <app-contact></app-contact>
 </div>
